@@ -1,14 +1,13 @@
 package main
 
 import (
-	pb "micro-consignment-service/proto/consignment"
+	pb "github.com/gmzhang/micro-consignment-service/proto/consignment"
 	"io/ioutil"
 	"encoding/json"
 	"google.golang.org/grpc"
 	"github.com/labstack/gommon/log"
 	"os"
 	"context"
-	"fmt"
 )
 
 const (
@@ -58,6 +57,6 @@ func main() {
 		log.Fatalf("Could not list consignment: %v", err)
 	}
 	for _, v := range getAll.Consignments{
-		fmt.Println(v)
+		log.Print(v)
 	}
 }
